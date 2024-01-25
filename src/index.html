@@ -7,10 +7,94 @@
     
   </head>
   <body>
-    <div class="container py-4 px-3 mx-auto">
-      <h1>Hello, Bootstrap and Vite!</h1>
-      <button class="btn btn-primary">Primary button</button>
+    <div class="hstack gap-3">
+      <div class="p-2 first_h_el">
+        <a class="icon-link " href="#">
+          <img
+          src="./img/contact-book 1.png"
+          class="img-fluid rounded-top"
+          alt="contact-book"
+        />Книга контактов</a>
+      </div>
+      <div class="p-2 ms-auto">
+        <button 
+        class="btn btn-danger"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#Id2"
+        aria-controls="Id2"
+        >Добавить контакт +</button>
+      </div>
+      <div class="p-2 last_h_el">
+        <button 
+        class="btn btn-primary"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#Id1"
+        aria-controls="Id1"
+        >Группы</button>
+      </div>
     </div>
+
+
+    
+    <div
+      class="offcanvas offcanvas-start"
+      data-bs-scroll="true"
+      tabindex="-1"
+      id="Id1"
+      aria-labelledby="Enable both scrolling & backdrop"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="Enable both scrolling & backdrop">
+          Группы контактов
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body grupps">
+      </div>
+      <div class="offcanvas-footer"> 
+        <div class="container">
+          <div class="row justify-content-end container_btn_offcanvas">
+            <button type="button" class="btn btn-light col-4 offcanfas_btn">Добавить</button>
+            <button type="button" class="btn btn-primary col-4 offcanfas_btn">Сохранить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="offcanvas offcanvas-start"
+      data-bs-scroll="true"
+      tabindex="-1"
+      id="Id2"
+      aria-labelledby="Enable both scrolling & backdrop"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="Enable both scrolling & backdrop">
+          Добавление контакта
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body grupps">
+      </div>
+      <div class="offcanvas-footer"> 
+        <div class="container">
+          <div class="row justify-content-end container_btn_offcanvas">
+            <button type="button" class="btn btn-primary col-4 offcanfas_btn">Сохранить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     
     <script type="module" src="./js/main.js"></script>
   </body>
