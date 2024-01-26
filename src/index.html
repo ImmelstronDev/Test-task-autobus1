@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./scss/styles.scss">
     <title>Bootstrap w/ Vite</title>
     
   </head>
@@ -59,8 +60,8 @@
       <div class="offcanvas-footer"> 
         <div class="container">
           <div class="row justify-content-end container_btn_offcanvas">
-            <button type="button" class="btn btn-light col-4 offcanfas_btn">Добавить</button>
-            <button type="button" class="btn btn-primary col-4 offcanfas_btn">Сохранить</button>
+            <button type="button" class="btn btn-light col-5 offcanvas_btn">Добавить</button>
+            <button type="button" class="btn btn-primary col-5 offcanvas_btn">Сохранить</button>
           </div>
         </div>
       </div>
@@ -85,15 +86,39 @@
         ></button>
       </div>
       <div class="offcanvas-body grupps">
+        <form action="" method="post">
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Оби Ван Кеноби"
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="number"
+              class="form-control"
+              id="Phone"
+              placeholder="+7(495)555-35-35"
+            />
+          </div>
+          <select class="form-select" >
+            <option selected>Выберите группу</option>
+          </select>
+        </form>
+        
       </div>
       <div class="offcanvas-footer"> 
         <div class="container">
           <div class="row justify-content-end container_btn_offcanvas">
-            <button type="button" class="btn btn-primary col-4 offcanfas_btn">Сохранить</button>
+            <button type="button" class="btn btn-primary col-5 offcanvas_btn">Сохранить</button>
           </div>
         </div>
       </div>
     </div>
+
+    <section id="content"></section>
     
     
     <script type="module" src="./js/main.js"></script>
