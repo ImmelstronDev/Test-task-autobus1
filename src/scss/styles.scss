@@ -76,3 +76,29 @@ a {
     line-height: 18px;
     opacity: 0.3;
 }
+
+.group_container{
+    display: flex;
+    padding: 8px 12px;
+}
+
+.group_input{
+    width: 205px;
+}
+
+.svg_container{
+    border-radius: 6px;
+    border: 1px solid gray;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.svg_container:hover{
+    background-color: #EA3D2F;
+    border: 1px solid #EA3D2F;
+    cursor: pointer;
+}
