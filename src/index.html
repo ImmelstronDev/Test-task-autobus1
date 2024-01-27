@@ -101,6 +101,9 @@
               class="form-control"
               id="Phone"
               placeholder="+7(495)555-35-35"
+              pattern="\+7\s?(\(\d{3}\)|\d{3})\s?\d{3}-?\d{2}-?\d{2}"
+              maxlength="12"
+              required
             />
           </div>
           <select class="form-select" >
@@ -118,7 +121,8 @@
       </div>
     </div>
 
-    <section id="content"></section>
+    <section id="content">
+    </section>
     
     
     <script type="module" src="./js/main.js"></script>

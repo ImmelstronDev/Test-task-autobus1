@@ -11,12 +11,12 @@ export default function renderGroupList () {
         input.value = `${groupList[i]}`
         input.className = 'form-control group_input'
         input.type = 'text'
-        const svgContainer = document.createElement('div')
-        const svg = document.createElement('img')
-        svgContainer.className = 'svg_container'
-        svg.src = './img/Delete forever.svg'
-        svgContainer.append(svg)
-        container.append(input, svgContainer)
+        const svgContainerDelete = document.createElement('div')
+        const svgDelete = document.createElement('img')
+        svgContainerDelete.className = 'svg_container_delete'
+        svgDelete.src = './img/Delete forever.svg'
+        svgContainerDelete.append(svgDelete)
+        container.append(input, svgContainerDelete)
         groupOffcanvas.append(container)
         
     }

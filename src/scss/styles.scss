@@ -86,7 +86,7 @@ a {
     width: 205px;
 }
 
-.svg_container{
+.svg_container_delete, .svg_container_edit{
     border-radius: 6px;
     border: 1px solid gray;
     width: 38px;
@@ -97,8 +97,36 @@ a {
     margin-left: 10px;
 }
 
-.svg_container:hover{
+.svg_container_delete:hover{
     background-color: #EA3D2F;
     border: 1px solid #EA3D2F;
     cursor: pointer;
+}
+
+.svg_container_edit:hover{
+    background-color: #005BFE;
+    border: 1px solid #005BFE;
+    cursor: pointer;
+}
+
+
+.accordion{
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.accordion-item{
+    width: 80%;
+}
+
+.contact_container, .right_container{
+    display: flex;
+    align-items: center;
+}
+
+.contact_container{
+    justify-content: space-between;
+    
 }
