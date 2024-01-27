@@ -9,6 +9,12 @@ import render from './renders/render'
 import renderContacts from './renders/renderContacts'
 
 const saveBtn = document.querySelector('.save')
+const contactBtn = document.querySelector('#save_contact')
+const inputName = document.querySelector('#name')
+const inputPhone = document.querySelector('#phone')
+const select = document.querySelector('.form-select')
+const defaultOption = document.querySelector('#default_option')
+const content = document.querySelector('#content')
 
 const contactList = Ls.getContacts()
 // const contacts = [
@@ -22,11 +28,29 @@ const contactList = Ls.getContacts()
 
 render()
 
+contactBtn.addEventListener('click', ()=> {
+    const accordion = document.querySelector('.accordion-flush')
+    const result = {}
+    result.name = inputName.value
+    result.phone = inputPhone.value
+    result.group = select.value
+    inputName.value = ''
+    inputPhone.value = ''
+    defaultOption.selected = 'true'
+    contactList.push(result)
+    Ls.setContacts(contactList)
+    content.removeChild(accordion)
+    if(contactList === null) {
+        renderMessage()
+    }else {
+        renderContacts()
+    }
+})
+
 saveBtn.addEventListener('click', ()=> {
     console.log('save')
     const groupList = []
     const inputList = document.querySelectorAll('.group_input')
-    const content = document.querySelector('#content')
     const accordion = document.querySelector('.accordion-flush')
     inputList.forEach((item)=> {
         groupList.push(item.value)

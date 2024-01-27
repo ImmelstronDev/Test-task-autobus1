@@ -99,7 +99,7 @@
             <input
               type="number"
               class="form-control"
-              id="Phone"
+              id="phone"
               placeholder="+7(495)555-35-35"
               pattern="\+7\s?(\(\d{3}\)|\d{3})\s?\d{3}-?\d{2}-?\d{2}"
               maxlength="12"
@@ -107,7 +107,7 @@
             />
           </div>
           <select class="form-select" >
-            <option selected>Выберите группу</option>
+            <option id="default_option" selected>Выберите группу</option>
           </select>
         </form>
         
@@ -115,7 +115,7 @@
       <div class="offcanvas-footer"> 
         <div class="container">
           <div class="row justify-content-end container_btn_offcanvas">
-            <button type="button" class="btn btn-primary col-5 offcanvas_btn">Сохранить</button>
+            <button type="button" id="save_contact" class="btn btn-primary col-5 offcanvas_btn">Сохранить</button>
           </div>
         </div>
       </div>
