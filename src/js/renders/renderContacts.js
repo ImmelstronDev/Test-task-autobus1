@@ -1,10 +1,12 @@
 import Ls from "../localStorageService";
 
 const contentNode = document.querySelector('#content')
-const groupList = Ls.getGroups()
-const contactsList = Ls.getContacts()
+
 
 export default function renderContacts() {
+    const groupList = Ls.getGroups()
+    const contactsList = Ls.getContacts()
+    
     const accordion = document.createElement('div')
     accordion.className ='accordion accordion-flush'
     accordion.id = 'accordionFlush'

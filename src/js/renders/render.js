@@ -4,9 +4,12 @@ import renderGroupList from "./renderGroupList";
 import renderMessage from "./renderMessage";
 import renderOptionsGroup from "./renderOptionGroup";
 
-const contactList = Ls.getContacts()
+
 
 export default function render() {
+    const contactList = Ls.getContacts()
+    
+
     renderGroupList()
     renderOptionsGroup()
     if(contactList === null) {
