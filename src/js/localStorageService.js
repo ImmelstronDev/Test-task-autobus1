@@ -1,12 +1,12 @@
 
 export default class Ls {
     static getGroups () {
-        const data = localStorage.getItem('group')
-        if (data !== null || data !== undefined) {
-            const result = JSON.parse(data || [])
-            return result
+
+        try {const data = localStorage.getItem('group')
+        return JSON.parse(data)
+        } catch (error) {
+            return []
         }
-        return []
     }
 
     static setGroups (groups) {
@@ -14,12 +14,11 @@ export default class Ls {
     }
 
     static getContacts () {
-        const data = localStorage.getItem('contacts')
-        if (data !== null || data !== undefined) {
-            const result = JSON.parse(data || [])
-            return result
+        try {const data = localStorage.getItem('contacts')
+        return JSON.parse(data)
+        } catch (error) {
+            return []
         }
-        return []
     }
 
     static setContacts(contacts) {
