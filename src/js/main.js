@@ -18,23 +18,24 @@ const content = document.querySelector('#content')
 render()
 
 contactBtn.addEventListener('click', ()=> {
-    const contactList = Ls.getContacts()
+    let contactList = Ls.getContacts()
     const accordion = document.querySelector('.accordion-flush')
     const result = {}
-
     result.name = inputName.value
     result.phone = inputPhone.value
     result.group = select.value
     inputName.value = ''
     inputPhone.value = ''
     defaultOption.selected = 'true'
+    if(contactList === null) contactList = []
     contactList.push(result)
     contactList.forEach((item, index)=>{
         item.id = `${index}`
     })
     Ls.setContacts(contactList)
-    content.removeChild(accordion)
-    if(contactList === null) {
+    if(accordion !== null) content.removeChild(accordion)
+    
+    if(contactList === null || contactList.length === 0) {
         renderMessage()
     }else {
         renderContacts()
@@ -51,8 +52,9 @@ saveBtn.addEventListener('click', ()=> {
         groupList.push(item.value)
     })
     Ls.setGroups(groupList)
-    content.removeChild(accordion)
-    if(contactList === null) {
+    if(accordion !== null) content.removeChild(accordion)
+    
+    if(contactList === null || contactList.length === 0) {
         renderMessage()
     }else {
         renderContacts()

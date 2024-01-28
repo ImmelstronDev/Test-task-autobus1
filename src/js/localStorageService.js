@@ -1,6 +1,5 @@
 export default class Ls {
     static getGroups () {
-
         try {const data = localStorage.getItem('group')
         return JSON.parse(data)
         } catch (error) {
