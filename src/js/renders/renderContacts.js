@@ -45,6 +45,7 @@ export default function renderContacts() {
             svgContainerEdit.className = 'svg_container_edit'
             svgEdit.src = './img/Mode edit.svg'
             const svgContainerDelete = document.createElement('div')
+            svgContainerDelete.setAttribute('data-id', `${filteredList[i].id}`)
             const svgDelete = document.createElement('img')
             svgContainerDelete.className = 'svg_container_delete'
             svgDelete.src = './img/Delete forever.svg'
@@ -53,6 +54,14 @@ export default function renderContacts() {
             rightContainer.append(phone, svgContainerEdit, svgContainerDelete)
             contactContainer.append(name, rightContainer)
             accordionBody.append(contactContainer)
+
+            svgContainerDelete.addEventListener('click', ()=> {
+                console.log(svgContainerDelete.dataset.id)
+                const index = contactsList.findIndex((object) => object.id === svgContainerDelete.dataset.id)
+                contactsList.splice(index, 1)
+                Ls.setContacts(contactsList)
+                accordionBody.removeChild(contactContainer)
+            })
         }
         
 
