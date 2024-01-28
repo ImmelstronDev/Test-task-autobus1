@@ -15,13 +15,13 @@ const select = document.querySelector('.form-select')
 const defaultOption = document.querySelector('#default_option')
 const content = document.querySelector('#content')
 
-
 render()
 
 contactBtn.addEventListener('click', ()=> {
     const contactList = Ls.getContacts()
     const accordion = document.querySelector('.accordion-flush')
     const result = {}
+
     result.name = inputName.value
     result.phone = inputPhone.value
     result.group = select.value
@@ -43,10 +43,10 @@ contactBtn.addEventListener('click', ()=> {
 
 saveBtn.addEventListener('click', ()=> {
     const contactList = Ls.getContacts()
-    console.log('save')
     const groupList = []
     const inputList = document.querySelectorAll('.group_input')
     const accordion = document.querySelector('.accordion-flush')
+
     inputList.forEach((item)=> {
         groupList.push(item.value)
     })

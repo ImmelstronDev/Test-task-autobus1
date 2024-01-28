@@ -9,12 +9,15 @@ export default function renderGroupList () {
     for (let i = 0; i < groupList.length; i++) {
         const container = document.createElement('div')
         container.className = 'group_container'
+
         const input = document.createElement('input')
         input.value = `${groupList[i]}`
         input.className = 'form-control group_input'
         input.type = 'text'
         input.disabled = 'true'
+
         const svgContainerDelete = document.createElement('div')
+
         const svgDelete = document.createElement('img')
         svgContainerDelete.className = 'svg_container_delete'
         svgDelete.src = './img/Delete forever.svg'
@@ -23,7 +26,6 @@ export default function renderGroupList () {
         groupOffcanvas.append(container)
 
         svgContainerDelete.addEventListener('click', ()=> {
-            console.log(`close ${input.value}`)
             groupOffcanvas.removeChild(container)
 
         })
@@ -31,13 +33,15 @@ export default function renderGroupList () {
     }
 
     lightBtn.addEventListener('click', ()=> {
-        console.log(lightBtn)
         const container = document.createElement('div')
         container.className = 'group_container'
+
         const input = document.createElement('input')
         input.className = 'form-control group_input'
         input.type = 'text'
+
         const svgContainerDelete = document.createElement('div')
+
         const svgDelete = document.createElement('img')
         svgContainerDelete.className = 'svg_container_delete'
         svgDelete.src = './img/Delete forever.svg'
@@ -46,7 +50,6 @@ export default function renderGroupList () {
         groupOffcanvas.append(container)
 
         svgContainerDelete.addEventListener('click', ()=> {
-            console.log(`close ${input.value}`)
             groupOffcanvas.removeChild(container)
 
         })

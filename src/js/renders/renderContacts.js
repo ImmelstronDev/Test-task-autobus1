@@ -2,7 +2,6 @@ import Ls from "../localStorageService";
 
 const contentNode = document.querySelector('#content')
 
-
 export default function renderContacts() {
     const groupList = Ls.getGroups()
     const contactsList = Ls.getContacts()
@@ -13,9 +12,12 @@ export default function renderContacts() {
     for (let i = 0; i < groupList.length; i++) {
         const container = document.createElement('div')
         container.className = 'accordion-item'
+
         const accordionHeader = document.createElement('h2')
+
         accordionHeader.className = 'accordion-header'
         const accordionButton = document.createElement('button')
+        
         accordionButton.className = 'accordion-button collapsed'
         accordionButton.type = 'button'
         accordionButton.setAttribute('data-bs-toggle', 'collapse')
@@ -23,10 +25,12 @@ export default function renderContacts() {
         accordionButton.setAttribute('aria-expanded', `false`)
         accordionButton.setAttribute('aria-controls', `flush-collapse${i}`)
         accordionButton.textContent = `${groupList[i]}`
+
         const accordionBodyContainer = document.createElement('div')
         accordionBodyContainer.id = `flush-collapse${i}`
         accordionBodyContainer.className = 'accordion-collapse collapse'
         accordionBodyContainer.setAttribute('data-bs-parent', '#accordionFlush')
+
         const accordionBody = document.createElement('div')
         accordionBody.className = 'accordion-body'
         const filteredList = contactsList.filter((item) => item.group === groupList[i])
@@ -34,18 +38,25 @@ export default function renderContacts() {
             
             const contactContainer = document.createElement('div')
             contactContainer.className = 'contact_container'
+
             const name = document.createElement('div')
             name.textContent = `${filteredList[i].name}`
+
             const rightContainer = document.createElement('div')
             rightContainer.className = 'right_container'
+
             const phone = document.createElement('div')
             phone.textContent = `${filteredList[i].phone}`
+
             const svgContainerEdit = document.createElement('div')
+
             const svgEdit = document.createElement('img')
             svgContainerEdit.className = 'svg_container_edit'
             svgEdit.src = './img/Mode edit.svg'
+
             const svgContainerDelete = document.createElement('div')
             svgContainerDelete.setAttribute('data-id', `${filteredList[i].id}`)
+
             const svgDelete = document.createElement('img')
             svgContainerDelete.className = 'svg_container_delete'
             svgDelete.src = './img/Delete forever.svg'
@@ -56,7 +67,6 @@ export default function renderContacts() {
             accordionBody.append(contactContainer)
 
             svgContainerDelete.addEventListener('click', ()=> {
-                console.log(svgContainerDelete.dataset.id)
                 const index = contactsList.findIndex((object) => object.id === svgContainerDelete.dataset.id)
                 contactsList.splice(index, 1)
                 Ls.setContacts(contactsList)

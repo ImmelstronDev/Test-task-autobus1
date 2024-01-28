@@ -8,7 +8,6 @@ export default function renderOptionsGroup () {
     if(oldOptions.length !== 0) {
         oldOptions.forEach((item,index)=> {
             select.removeChild(item)
-            console.log(index)
         })
     }
     

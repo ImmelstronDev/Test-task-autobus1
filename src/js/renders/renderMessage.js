@@ -1,4 +1,3 @@
-
 const contentNode = document.querySelector('#content')
 
  export default function renderMessage() {
@@ -7,6 +6,3 @@ const contentNode = document.querySelector('#content')
     p.className = 'main_message'
     contentNode.append(p)
 }
-
-
-
