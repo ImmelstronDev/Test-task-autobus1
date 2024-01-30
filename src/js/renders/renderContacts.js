@@ -1,4 +1,6 @@
 import Ls from "../localStorageService";
+import Modeedit from "./../../img/Mode edit.svg"
+import Deleteforever from "./../../img/Delete forever.svg"
 
 const contentNode = document.querySelector('#content')
 
@@ -52,14 +54,14 @@ export default function renderContacts() {
 
             const svgEdit = document.createElement('img')
             svgContainerEdit.className = 'svg_container_edit'
-            svgEdit.src = './img/Mode edit.svg'
+            svgEdit.src = Modeedit
 
             const svgContainerDelete = document.createElement('div')
             svgContainerDelete.setAttribute('data-id', `${filteredList[i].id}`)
 
             const svgDelete = document.createElement('img')
             svgContainerDelete.className = 'svg_container_delete'
-            svgDelete.src = './img/Delete forever.svg'
+            svgDelete.src = Deleteforever
             svgContainerEdit.append(svgEdit)
             svgContainerDelete.append(svgDelete)
             rightContainer.append(phone, svgContainerEdit, svgContainerDelete)
