@@ -1,4 +1,5 @@
 import Ls from "../localStorageService"
+import Deleteforever from "./../../img/Delete forever.svg"
 
 const groupOffcanvas = document.querySelector('.groups')
 const groupList = Ls.getGroups()
@@ -20,7 +21,7 @@ export default function renderGroupList () {
 
         const svgDelete = document.createElement('img')
         svgContainerDelete.className = 'svg_container_delete'
-        svgDelete.src = './img/Delete forever.svg'
+        svgDelete.src = Deleteforever
         svgContainerDelete.append(svgDelete)
         container.append(input, svgContainerDelete)
         groupOffcanvas.append(container)
