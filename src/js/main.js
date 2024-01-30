@@ -20,6 +20,7 @@ const lightBtn = document.querySelector('.btn-light')
 render()
 
 contactBtn.addEventListener('click', ()=> {
+    const message = document.querySelector('p')
     let contactList = Ls.getContacts()
     const accordion = document.querySelector('.accordion-flush')
     const result = {}
@@ -36,6 +37,7 @@ contactBtn.addEventListener('click', ()=> {
     })
     Ls.setContacts(contactList)
     if(accordion !== null) content.removeChild(accordion)
+    if(message) content.removeChild(message)
     
     if(contactList === null || contactList.length === 0) {
         renderMessage()
@@ -49,14 +51,16 @@ saveBtn.addEventListener('click', ()=> {
     const groupList = []
     const inputList = document.querySelectorAll('.group_input')
     const accordion = document.querySelector('.accordion-flush')
+    const message = document.querySelector('p')
 
     inputList.forEach((item)=> {
         groupList.push(item.value)
     })
     Ls.setGroups(groupList)
     if(accordion !== null) content.removeChild(accordion)
+    if(message) content.removeChild(message)
     
-    if(contactList === null || contactList.length === 0) {
+    if(contactList === null || contactList.length === 0 || groupList.length === 0) {
         renderMessage()
     }else {
         renderContacts()
@@ -80,7 +84,6 @@ lightBtn.addEventListener('click', ()=> {
     svgContainerDelete.append(svgDelete)
     container.append(input, svgContainerDelete)
     groupOffcanvas.append(container)
-    console.log(container)
 
     svgContainerDelete.addEventListener('click', ()=> {
         groupOffcanvas.removeChild(container)

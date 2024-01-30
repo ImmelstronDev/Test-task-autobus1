@@ -12,7 +12,7 @@ export default function render() {
         renderOptionsGroup()
     }
     
-    if(contactList === null || contactList.length === 0) {
+    if(contactList === null || contactList.length === 0 || groupList.length === 0) {
         renderMessage()
     }else {
         renderContacts()
