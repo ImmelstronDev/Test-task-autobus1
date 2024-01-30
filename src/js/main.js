@@ -14,6 +14,8 @@ const inputPhone = document.querySelector('#phone')
 const select = document.querySelector('.form-select')
 const defaultOption = document.querySelector('#default_option')
 const content = document.querySelector('#content')
+const groupOffcanvas = document.querySelector('.groups')
+const lightBtn = document.querySelector('.btn-light')
 
 render()
 
@@ -60,4 +62,28 @@ saveBtn.addEventListener('click', ()=> {
         renderContacts()
     }
     renderOptionsGroup()
+})
+
+lightBtn.addEventListener('click', ()=> {
+    const container = document.createElement('div')
+    container.className = 'group_container'
+
+    const input = document.createElement('input')
+    input.className = 'form-control group_input'
+    input.type = 'text'
+
+    const svgContainerDelete = document.createElement('div')
+
+    const svgDelete = document.createElement('img')
+    svgContainerDelete.className = 'svg_container_delete'
+    svgDelete.src = './img/Delete forever.svg'
+    svgContainerDelete.append(svgDelete)
+    container.append(input, svgContainerDelete)
+    groupOffcanvas.append(container)
+    console.log(container)
+
+    svgContainerDelete.addEventListener('click', ()=> {
+        groupOffcanvas.removeChild(container)
+
+    })
 })
